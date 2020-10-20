@@ -3,7 +3,9 @@
 # IRSOLS Inc @irsols 
 # www.irsols.com / Your Cloud Native Edge
 # MIT License. Attribution required 
-# 
+# References: 
+# Azure CLI: https://docs.microsoft.com/en-us/cli/azure/ad?view=azure-cli-latest
+# AZ Service Principal : https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals
 if [ -z "$1" ]
    then
      echo
@@ -18,9 +20,9 @@ echo " This tool will setup a Service Principal with Client Secret for TF"
 # Uncomment this for GovCloud accounts
 # az cloud set --name AzureChinaCloud|AzureGermanCloud|AzureUSGovernment
 #
-#Firstly, login to the Azure CLI using:
+#Login to the Azure CLI using:
 # az login
-# Once logged in - it's possible to list the Subscriptions associated with the account via:
+# Once logged in - get list of all Subscriptions associated with the account using:
 # az account list
 export current_time=$(date "+%Y.%m.%d-%H.%M.%S")
 export defaultSubId=`az account list | grep -4 isDefault | grep -2 true | grep id | awk '{ print $2 }'| sed 's/\"//g
