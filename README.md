@@ -9,8 +9,10 @@ git tag -ln
 
 ### Instructions
  Azure uses service principal concept .
- First run the sp_create_config.sh from directory using an app name as argument /Users/zee/Documents/coding/Azure/azureAcctSetups/
- This will create a source file set_azvars_for_tf.txt which will need to be manually source'd in the shell .
+ First run the `sp_create_config.sh`
+ from directory using an app name as argument 
+ This will create a source file `set_azvars_for_tf.txt` which will need to be manually source'd in the shell .
+ \r
  Change to the directory for TF scripts and do tf init, plan etc
  Ths way TF will only be using the app credentials created using the Service Principal construct.
  
